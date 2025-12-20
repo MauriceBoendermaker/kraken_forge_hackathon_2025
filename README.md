@@ -71,17 +71,6 @@ The final product should emphasize: - UX clarity
 
 ------------------------------------------------------------------------
 
-## Brainstorming
-
-### Potential Features
-
--   Visual workflow editor for strategy creation
--   Real‑time orderbook and OHLC feed integration
--   Strategy components (conditions, triggers, indicators, actions)
--   Backtesting engine with adjustable parameters
--   Real‑time risk metrics and PnL tracking
--   Strategy templating (common patterns like grid trading, breakout, mean reversion)
-
 ### Tech Stack
 
 -   **Front-end:**
