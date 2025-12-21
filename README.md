@@ -137,13 +137,17 @@ API_URL=https://api.kraken.com
 
 *Screenshots demonstrating key features of StrategyFlow*
 
-| Landing page | Strategy editor |
-|--------------|-----------------|
+| Landing page                                   | Strategy editor                         |
+|------------------------------------------------|-----------------------------------------|
 | ![Landing Page](assets/screenshot_landing.png) | ![Editor](assets/screenshot_editor.png) |
 
-| Template gallery | Execution simulator |
-|------------------|---------------------|
+| Template gallery                              | Execution simulator                           |
+|-----------------------------------------------|-----------------------------------------------|
 | ![Templates](assets/screenshot_templates.png) | ![Simulator](assets/screenshot_simulator.png) |
+
+| Version history                                           | Saved trading strategies                                |
+|-----------------------------------------------------------|---------------------------------------------------------|
+| ![Version History](assets/screenshot_version-history.png) | ![Trading Strategies](assets/screenshot_strategies.png) |
 
 ---
 
