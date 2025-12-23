@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://strategyflow.dev/">Live Demo</a> •
-  <a href="https://www.youtube.com/watch?v=PLACEHOLDER">Video Walkthrough</a> •
+  <a href="https://www.youtube.com/watch?v=nSUAowGQ5YM">Video Walkthrough</a> •
   <a href="docs/DOCUMENTATION.pdf">Documentation</a> •
   <a href="https://taikai.network/en/kraken/hackathons/kraken-forge/overview">Hackathon website</a>
 </p>
@@ -126,7 +126,7 @@ API_URL=https://api.kraken.com
 | Resource | Link |
 |----------|------|
 | Live demo | [https://strategyflow.dev/](https://strategyflow.dev/) |
-| Video walkthrough | [YouTube - PLACEHOLDER](https://www.youtube.com/watch?v=PLACEHOLDER) |
+| Video walkthrough | [YouTube - PLACEHOLDER](https://www.youtube.com/watch?v=nSUAowGQ5YM) |
 | Full documentation | [docs/DOCUMENTATION.pdf](docs/DOCUMENTATION.pdf) |
 
 > **Note:** The live demo connects to a Kraken Pro account without funded balance for safety. Order executions will return "Insufficient funds" as expected - this confirms the API integration is working correctly.
