@@ -1,0 +1,388 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ========================================
+   COLOR SYSTEM
+   ======================================== */
+
+:root {
+  /* Brand Colors */
+  --brand-cyan: #00b8e6;
+  --brand-cyan-light: #33c9ed;
+  --brand-cyan-dark: #009fcc;
+
+  /* Base Colors */
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+
+  /* UI Colors */
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+
+  /* State Colors */
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+
+  /* Form Elements */
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+
+  /* Border Radius */
+  --radius: 0.625rem;
+
+  /* Sidebar */
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  /* Base Colors */
+  --background: oklch(0.08 0 0);
+  --foreground: oklch(0.95 0.02 223);
+  --card: oklch(0.12 0 0);
+  --card-foreground: oklch(0.95 0.02 223);
+  --popover: oklch(0.12 0 0);
+  --popover-foreground: oklch(0.95 0.02 223);
+
+  /* UI Colors */
+  --primary: #00b8e6;
+  --primary-foreground: oklch(0.08 0 0);
+  --secondary: oklch(0.18 0 0);
+  --secondary-foreground: oklch(0.95 0.02 223);
+  --muted: oklch(0.25 0 0);
+  --muted-foreground: oklch(0.65 0.08 0);
+  --accent: #00b8e6;
+  --accent-foreground: oklch(0.08 0 0);
+
+  /* State Colors */
+  --destructive: oklch(0.65 0.21 25);
+  --destructive-foreground: oklch(0.95 0.02 223);
+
+  /* Form Elements */
+  --border: oklch(0.18 0 0);
+  --input: oklch(0.15 0 0);
+  --ring: #00b8e6;
+
+  /* Sidebar */
+  --sidebar: oklch(0.1 0 0);
+  --sidebar-foreground: oklch(0.95 0.02 223);
+  --sidebar-primary: #00b8e6;
+  --sidebar-primary-foreground: oklch(0.08 0 0);
+  --sidebar-accent: oklch(0.2 0 0);
+  --sidebar-accent-foreground: oklch(0.95 0.02 223);
+  --sidebar-border: oklch(0.18 0 0);
+  --sidebar-ring: #00b8e6;
+
+  /* Trading UI Accent Colors */
+  --neon-cyan: var(--brand-cyan);
+  --neon-green: oklch(0.7 0.21 150);
+  --neon-red: oklch(0.65 0.21 25);
+  --neon-yellow: oklch(0.75 0.18 85);
+  --neon-purple: oklch(0.6 0.21 280);
+}
+
+/* High Contrast Mode */
+.high-contrast {
+  /* Increase contrast for better readability */
+  --foreground: oklch(1 0 0);
+  --background: oklch(0 0 0);
+  --card: oklch(0.05 0 0);
+  --card-foreground: oklch(1 0 0);
+  --border: oklch(0.3 0 0);
+  --muted-foreground: oklch(0.8 0 0);
+
+  /* Enhanced primary colors */
+  --primary: #00d4ff;
+  --accent: #00d4ff;
+  --ring: #00d4ff;
+
+  /* Sidebar with higher contrast */
+  --sidebar: oklch(0.03 0 0);
+  --sidebar-foreground: oklch(1 0 0);
+  --sidebar-border: oklch(0.3 0 0);
+  --sidebar-primary: #00d4ff;
+  --sidebar-ring: #00d4ff;
+
+  /* Form elements */
+  --input: oklch(0.08 0 0);
+
+  /* Enhanced trading colors */
+  --neon-cyan: #00d4ff;
+  --neon-green: oklch(0.8 0.25 150);
+  --neon-red: oklch(0.75 0.25 25);
+  --neon-yellow: oklch(0.85 0.22 85);
+  --neon-purple: oklch(0.7 0.25 280);
+}
+
+/* High contrast in light mode */
+.high-contrast:not(.dark) {
+  --foreground: oklch(0 0 0);
+  --background: oklch(1 0 0);
+  --card: oklch(0.98 0 0);
+  --card-foreground: oklch(0 0 0);
+  --border: oklch(0.7 0 0);
+  --muted-foreground: oklch(0.3 0 0);
+
+  --primary: #0088b3;
+  --accent: #0088b3;
+  --ring: #0088b3;
+
+  --input: oklch(0.95 0 0);
+}
+
+@theme inline {
+  --font-sans: "Geist", "Geist Fallback";
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* ========================================
+   BASE STYLES
+   ======================================== */
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ========================================
+   REACT FLOW COMPONENTS
+   ======================================== */
+
+@layer components {
+  /* Connection Lines */
+  .react-flow__edge path {
+    stroke: var(--brand-cyan) !important;
+    stroke-width: 2;
+  }
+
+  .react-flow__edge.selected path {
+    stroke: var(--neon-yellow) !important;
+    stroke-width: 3;
+  }
+
+  /* Connection Handles */
+  .react-flow__handle {
+    background: var(--brand-cyan);
+    border: 2px solid var(--background);
+    transition: all 0.2s ease-in-out;
+  }
+
+  .react-flow__handle.connectable {
+    background: var(--brand-cyan);
+  }
+
+  .react-flow__handle:hover {
+    background: var(--brand-cyan-light);
+    transform: scale(1.1);
+  }
+
+  /* ========================================
+     TRADING NODES
+     ======================================== */
+
+  .trading-node {
+    border-radius: 10px;
+    background: var(--card);
+    border: 2px solid var(--border);
+    padding: 14px 16px;
+    min-width: 180px;
+    max-width: 280px;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .dark .trading-node {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .trading-node:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .dark .trading-node:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+
+  .trading-node.selected {
+    border-color: var(--brand-cyan);
+    box-shadow:
+      0 0 20px rgba(0, 184, 230, 0.4),
+      0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .dark .trading-node.selected {
+    box-shadow:
+      0 0 20px rgba(0, 184, 230, 0.4),
+      0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Order Node (Cyan) */
+  .trading-node.order {
+    border-color: var(--brand-cyan);
+    background: var(--card);
+  }
+
+  .dark .trading-node.order {
+    background: linear-gradient(
+      135deg,
+      oklch(0.14 0 0) 0%,
+      oklch(0.12 0.02 200) 100%
+    );
+  }
+
+  .trading-node.order:hover {
+    border-color: var(--brand-cyan-light);
+    box-shadow: 0 4px 16px rgba(0, 184, 230, 0.2);
+  }
+
+  /* Condition Node (Yellow) */
+  .trading-node.condition {
+    border-color: var(--neon-yellow);
+    background: var(--card);
+  }
+
+  .dark .trading-node.condition {
+    background: linear-gradient(
+      135deg,
+      oklch(0.14 0 0) 0%,
+      oklch(0.12 0.02 60) 100%
+    );
+  }
+
+  .trading-node.condition:hover {
+    border-color: oklch(0.8 0.18 85);
+    box-shadow: 0 4px 16px rgba(255, 193, 7, 0.2);
+  }
+
+  /* Logic Node (Green) */
+  .trading-node.logic {
+    border-color: var(--neon-green);
+    background: var(--card);
+  }
+
+  .dark .trading-node.logic {
+    background: linear-gradient(
+      135deg,
+      oklch(0.14 0 0) 0%,
+      oklch(0.12 0.02 150) 100%
+    );
+  }
+
+  .trading-node.logic:hover {
+    border-color: oklch(0.75 0.21 150);
+    box-shadow: 0 4px 16px rgba(102, 221, 170, 0.2);
+  }
+
+  /* Utility Node (Purple) */
+  .trading-node.utility {
+    border-color: var(--neon-purple);
+    background: var(--card);
+  }
+
+  .dark .trading-node.utility {
+    background: linear-gradient(
+      135deg,
+      oklch(0.14 0 0) 0%,
+      oklch(0.12 0.02 270) 100%
+    );
+  }
+
+  .trading-node.utility:hover {
+    border-color: oklch(0.65 0.21 280);
+    box-shadow: 0 4px 16px rgba(153, 153, 255, 0.2);
+  }
+
+  /* System Node (Purple - darker shade) */
+  .trading-node.system {
+    border-color: oklch(0.55 0.21 290);
+    background: var(--card);
+  }
+
+  .dark .trading-node.system {
+    background: linear-gradient(
+      135deg,
+      oklch(0.14 0 0) 0%,
+      oklch(0.12 0.02 290) 100%
+    );
+  }
+
+  .trading-node.system:hover {
+    border-color: oklch(0.6 0.21 290);
+    box-shadow: 0 4px 16px rgba(138, 43, 226, 0.3);
+  }
+}
+
+/* React Flow controls styling */
+.react-flow__controls button {
+  background-color: white;
+  color: #00b8e6;
+}
+
+.react-flow__controls button:hover {
+  background-color: #00b8e6;
+}
+
+.react-flow__controls svg {
+  fill: currentColor;
+}

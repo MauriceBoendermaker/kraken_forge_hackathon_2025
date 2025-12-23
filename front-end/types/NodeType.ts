@@ -1,0 +1,1 @@
+export type NodeType = "order" | "condition" | "logic" | "utility" | "system"
