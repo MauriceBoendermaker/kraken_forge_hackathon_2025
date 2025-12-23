@@ -5,6 +5,8 @@
 *venv
 *.venv
 
+.next
+
 # User-specific files
 *.suo
 *.user
@@ -796,11 +798,11 @@ paket-files/
 # FAKE - F# Make
 .fake/
 
-.next
-
 # JetBrains Rider
 .idea/
 *.sln.iml
+
+.claude/
 
 # CodeRush
 .cr/
